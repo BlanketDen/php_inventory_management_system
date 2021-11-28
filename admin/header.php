@@ -75,6 +75,10 @@
             <a href="purchase_master.php"><i class="icon icon-shopping-cart"></i><span>Purchase Master</span></a>
         </li>
 
+        <li >
+            <a href="stock_master.php"><i class="icon icon-shopping-cart"></i><span>Stock Master</span></a>
+        </li>
+
         <li class="submenu"><a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span
                     class="label label-important">3</span></a>
             <ul>
