@@ -76,6 +76,10 @@
         </li>
 
         <li >
+            <a href="sales_master.php"><i class="icon icon-shopping-cart"></i><span>Sales Master</span></a>
+        </li>
+
+        <li >
             <a href="stock_master.php"><i class="icon icon-shopping-cart"></i><span>Stock Master</span></a>
         </li>
 
