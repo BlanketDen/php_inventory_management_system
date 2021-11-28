@@ -244,7 +244,7 @@ include "../user/connection.php";
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById("packing_size_div").innerHTML=xmlhttp.responseText;
 
-                $('#packing_size').on('change', function(){
+                $('#packing_size').on('change', function() {
                    load_price(document.getElementById("packing_size").value); 
                    
                 });
@@ -261,18 +261,19 @@ include "../user/connection.php";
         var company_name=document.getElementById("company_name").value;
         var product_name=document.getElementById("product_name").value;
         var unit=document.getElementById("unit").value;
-
+        
 
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+               
                 document.getElementById("price").value=xmlhttp.responseText;
                 
             }
         };
         xmlhttp.open("GET", "forajax/load_price.php?company_name="+company_name+"&product_name="+product_name+"&unit="+unit+"&packing_size="+packing_size, true);
         xmlhttp.send();
-
+    }
 </script>
 
 
