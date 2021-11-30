@@ -132,7 +132,7 @@ include "../user/connection.php";
                         <div class="span1">
                             <div>
                                 <label>Enter Qty</label>
-                                <input type="text" class="span11" name="qty" id="qty" autocomplete="off">
+                                <input type="text" class="span11" name="qty" id="qty" autocomplete="off" onkeyup="generate_total(this.value)">
                             </div>
                         </div>
 
@@ -148,7 +148,7 @@ include "../user/connection.php";
                         <div class="span1">
                             <div>
                                 <label>&nbsp</label>
-                                <input type="button" class="span11 btn btn-success" value="Add">
+                                <input type="button" class="span11 btn btn-success" value="Add" onclick="add_session();">
                             </div>
                         </div>
 
@@ -274,6 +274,46 @@ include "../user/connection.php";
         xmlhttp.open("GET", "forajax/load_price.php?company_name="+company_name+"&product_name="+product_name+"&unit="+unit+"&packing_size="+packing_size, true);
         xmlhttp.send();
     }
+
+    function generate_total(qty)
+    {
+        document.getElementById("total").value=eval (document.getElementById("price").value) * eval(document.getElementById("qty").value);
+    }
+
+    function add_session()
+    {
+        var product_company=document.getElementById("company_name").value;
+        var product_name=document.getElementById("product_name").value;
+        var unit=document.getElementById("unit").value;
+        var packing_size=document.getElementById("packing_size").value;
+        var price=document.getElementById("price").value;
+        var qty=document.getElementById("qty").value;
+        var total=document.getElementById("total").value;
+
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+               
+                if(xmlhttp.responseText=="")
+                {
+                    alert("product added successfully");
+                }
+                else
+                {
+                    alert(xmlhttp.responseText);
+                }
+
+                
+            }
+        };
+        xmlhttp.open("GET", "forajax/save_in_session.php?company_name="+product_company+"&product_name="+product_name+"&unit="+unit+"&packing_size="+packing_size+"&price="+price+"&qty="+qty+"&total="+total, true);
+        xmlhttp.send();
+
+    }
+
+
+
 </script>
 
 
