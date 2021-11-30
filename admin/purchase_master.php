@@ -165,7 +165,7 @@ include "../user/connection.php";
 </div>
 
 
-,<script type="text/javascript">
+<script type="text/javascript">
     function select_company(company_name)
     {
         var xmlhttp = new XMLHttpRequest();
