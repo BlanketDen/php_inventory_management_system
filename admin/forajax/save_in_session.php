@@ -31,7 +31,7 @@ if(isset($_SESSION['cart']))
             array_push($_SESSION['cart'],$b);
         }
         else{
-            echo "The Entered Quantity is not available";
+            echo "The Entered Quantity is not available!";
         }
     }
     else
@@ -132,7 +132,7 @@ function check_duplicate_product($product_company,$product_name,$product_unit,$p
 
 }
 
-//load the products quanity from the session array
+//load the product quantity from the session array
 function check_the_qty($product_company,$product_name,$product_unit,$packing_size)
 {
     $qty_found=0;

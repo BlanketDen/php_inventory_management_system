@@ -167,33 +167,10 @@ include "../user/connection.php";
                 <div class="span12">
                     <center><h4>Taken Products</h4></center>
 
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Product Company</th>
-                            <th>Product Name</th>
-                            <th>Product Unit</th>
-                            <th>Product Size</th>
-                            <th>Product Price</th>
-                            <th>Product Qty</th>
-                            <th>Total</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                        <tr>
-                            <td>Amul</td>
-                            <td>Buutter</td>
-                            <td>Grams</td>
-                            <td>500</td>
-                            <td>10</td>
-                            <td>5</td>
-                            <td>50</td>
-                            <td style="color: green">Edit</td>
-                            <td style="color:red">Delete</td>
-                        </tr>
-                    </table>
+                    <div id="bill_products"></div>
 
                     <h4>
-                        <div style="float: right"><span style="float:left;">Total:&#8377;</span><span style="float: left">525</span></div>
+                        <div style="float: right"><span style="float:left;">Total:&#8377;</span><span style="float: left" id="totalbill" >0</span></div>
                     </h4>
 
 
@@ -297,10 +274,14 @@ include "../user/connection.php";
                
                 if(xmlhttp.responseText=="")
                 {
-                    alert("product added successfully");
+                    // everytime a new product is added it will call the session fromt the load billing products
+                    load_billing_products();
+                    alert("The Product has been added Successfully!");
                 }
                 else
                 {
+                    // everytime a new product is added it will call the session fromt the load billing products
+                    load_billing_products();
                     alert(xmlhttp.responseText);
                 }
 
@@ -311,7 +292,21 @@ include "../user/connection.php";
         xmlhttp.send();
 
     }
+    // to load the load_billing_products.php file to display the table
+    function load_billing_products()
+    {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("bill_products").innerHTML=xmlhttp.responseText;
+                
+            }
+        };
+        xmlhttp.open("GET", "forajax/load_billing_products.php", true);
+        xmlhttp.send();
+    }
 
+    load_billing_products();
 
 
 </script>

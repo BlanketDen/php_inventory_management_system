@@ -5,7 +5,7 @@ session_start();
 $max=0;
 
 if (isset($_SESSION['cart'])) {
-    //unset($_SESSION['cart']); // <- Yang Ni, Uncomment bila nak guna je.
+    //unset($_SESSION['cart']); // <- Yang Ni, Uncomment bila nak guna je. And after clear comment balik
     $max = count($_SESSION['cart']);
 }
 
