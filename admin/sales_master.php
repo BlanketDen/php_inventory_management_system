@@ -290,6 +290,7 @@ include "../user/connection.php";
         };
         xmlhttp.open("GET", "forajax/save_in_session.php?company_name="+product_company+"&product_name="+product_name+"&unit="+unit+"&packing_size="+packing_size+"&price="+price+"&qty="+qty+"&total="+total, true);
         xmlhttp.send();
+        
 
     }
     // to load the load_billing_products.php file to display the table
@@ -299,10 +300,24 @@ include "../user/connection.php";
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById("bill_products").innerHTML=xmlhttp.responseText;
+                load_total_bill();
                 
             }
         };
         xmlhttp.open("GET", "forajax/load_billing_products.php", true);
+        xmlhttp.send();
+    }
+    // to load the total bill and display it
+    function load_total_bill()
+    {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("totalbill").innerHTML=xmlhttp.responseText;
+                
+            }
+        };
+        xmlhttp.open("GET", "forajax/load_billing_amount.php", true);
         xmlhttp.send();
     }
 
