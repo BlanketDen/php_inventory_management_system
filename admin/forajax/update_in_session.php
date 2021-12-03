@@ -10,36 +10,10 @@ $qty=$_GET["qty"];
 $total=$_GET["total"];
 
 
-
-//primary code which are gonna be using the functions
-if(isset($_SESSION['cart']))
-{
-//items that are found in the session array
-    $max=sizeof($_SESSION['cart']);
-    $check_available=0;
-    $check_available=check_duplicate_product($company_name,$product_name,$unit,$packing_size);
-    $available_qty=0;
-    $check_the_qty=0;
-
-    //to check if the product is a duplicate
-    if($check_available==0)
-    {
-        $available_qty=check_qty($company_name,$product_name,$unit,$packing_size,$link);
-        if($available_qty>=$qty)
-        {
-            $b=array("company_name"=>$company_name,"product_name"=>$product_name,"unit"=>$unit,"packing_size"=>$packing_size,"price"=>$price,"qty"=>$qty);
-            array_push($_SESSION['cart'],$b);
-        }
-        else{
-            echo "The Entered Quantity is not available!";
-        }
-    }
-    else
-    {
         $av_qty=0;
         $exist_qty=0;
-        $exist_qty=check_the_qty($company_name,$product_name,$unit,$packing_size);
-        $exist_qty=$exist_qty+$qty;
+        $exist_qty=0;
+        $exist_qty=$qty;
         $av_qty=check_qty($company_name,$product_name,$unit,$packing_size,$link);
         if($av_qty>=$exist_qty)
         {
@@ -52,25 +26,6 @@ if(isset($_SESSION['cart']))
             echo "The Entered Quantity is not Available";
         }
 
-    }
-
-
-
-}
-//for any products that are not availble in the cart
-else{
-    $available_qty=check_qty($company_name,$product_name,$unit,$packing_size,$link);
-    if($available_qty>=$qty)
-    {
-//if its available then this line should save it in the session array
-        $_SESSION['cart']=array(array("company_name"=>$company_name,"product_name"=>$product_name,"unit"=>$unit,"packing_size"=>$packing_size,"price"=>$price,"qty"=>$qty));
-    }
-    else
-    {
-        echo "The Entered Quantity is not Available";
-    }
-
-}
 
 
 
