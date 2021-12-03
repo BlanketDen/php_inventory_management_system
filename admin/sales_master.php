@@ -7,7 +7,7 @@ include "../user/connection.php";
         <!--breadcrumbs-->
         <div id="content-header">
             <div id="breadcrumb"><a href="index.html" class="tip-bottom"><i class="icon-home"></i>
-                    Sale a products</a></div>
+                    Sales of Products</a></div>
         </div>
 
         <div class="container-fluid">
@@ -16,7 +16,7 @@ include "../user/connection.php";
                     <div class="span12">
                         <div class="widget-box">
                             <div class="widget-title"><span class="icon"> <i class="icon-align-justify"></i> </span>
-                                <h5>Sale a Products</h5>
+                                <h5>Sales of Products</h5>
                             </div>
 
                             <div class="widget-content nopadding">
@@ -26,7 +26,7 @@ include "../user/connection.php";
                                     <br>
 
                                     <div>
-                                        <label>Full Name</label>
+                                        <label>Full Name:</label>
                                         <input type="text" class="span12" name="full_name">
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@ include "../user/connection.php";
                                     <br>
 
                                     <div>
-                                        <label>Bill Type</label>
+                                        <label>Billing Type:</label>
                                         <select class="span12" name="bill_type">
                                             <option>Cash</option>
                                             <option>Debit</option>
@@ -47,7 +47,7 @@ include "../user/connection.php";
                                     <br>
 
                                     <div>
-                                        <label>Date</label>
+                                        <label>Date:</label>
                                         <input type="text" class="span12" name="date"
                                                value="<?php echo date("Y-m-d") ?>"
                                                readonly>
@@ -66,12 +66,12 @@ include "../user/connection.php";
                     <div class="span12">
 
 
-                        <center><h4>Select A Product</h4></center>
+                        <center><h4>Select a Product</h4></center>
 
 
                         <div class="span2">
                             <div>
-                                <label>Product Company</label>
+                                <label>Company</label>
                                 <select class="span11" name="company_name" id="company_name"
                                         onchange="select_company(this.value)">
                                     <option>Select</option>
@@ -131,7 +131,7 @@ include "../user/connection.php";
 
                         <div class="span1">
                             <div>
-                                <label>Enter Qty</label>
+                                <label>Enter Quantity</label>
                                 <input type="text" class="span11" name="qty" id="qty" autocomplete="off" onkeyup="generate_total(this.value)">
                             </div>
                         </div>
@@ -140,7 +140,7 @@ include "../user/connection.php";
 
                         <div class="span1">
                             <div>
-                                <label>Total</label>
+                                <label>Total:</label>
                                 <input type="text" class="span11" name="total" id="total" value="0" readonly>
                             </div>
                         </div>
@@ -165,12 +165,12 @@ include "../user/connection.php";
 
             <div class="row-fluid" style="background-color: white; min-height: 100px; padding:10px;">
                 <div class="span12">
-                    <center><h4>Taken Products</h4></center>
+                    <center><h4>Recorded Products:</h4></center>
 
                     <div id="bill_products"></div>
 
                     <h4>
-                        <div style="float: right"><span style="float:left;">Total:&#8377;</span><span style="float: left" id="totalbill" >0</span></div>
+                        <div style="float: right"><span style="float:left;">Total: RM</span><span style="float: left" id="totalbill" >0</span></div>
                     </h4>
 
 

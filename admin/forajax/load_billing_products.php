@@ -3,14 +3,13 @@ session_start();
 ?>
 <table class="table table-bordered">
     <tr>
-        <th>Product Company</th>
+        <th>Company</th>
         <th>Product Name</th>
-        <th>Product Unit</th>
+        <th>Unit</th>
         <th>Product Size</th>
-        <th>Product Price</th>
-        <th>Product Qty</th>
+        <th>Price</th>
+        <th>Quantity</th>
         <th>Total</th>
-        <th>Edit</th>
         <th>Delete</th>
     </tr>
 <?php
@@ -71,9 +70,8 @@ for($i=0;$i<$max;$i++)
             <td><?php echo $unit_session; ?></td>
             <td><?php echo $packing_size_session; ?></td>
             <td><?php echo $price_session; ?></td>
-            <td><?php echo $qty_session; ?></td>
+            <td><input type="text" id="tt<?php  ?>"><?php echo $qty_session; ?></td>
             <td><?php echo ($qty_session * $price_session); ?></td>
-            <td style="color: green">Edit</td>
             <td style="color:red">Delete</td>
         </tr>
         <?php
