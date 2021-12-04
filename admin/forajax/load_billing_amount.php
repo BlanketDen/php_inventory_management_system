@@ -32,8 +32,9 @@ for($i=0;$i<$max;$i++)
                     $price_session=$val;
                 }
             }
-
+            if ($qty_session != "" || $price_session != ""){
             $gtotal=$gtotal+($qty_session*$price_session);
+        }
             
         }
 
