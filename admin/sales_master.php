@@ -516,6 +516,7 @@ if(isset($_POST["submit1"]))
             if($company_name_session!="")
             {
                 mysqli_query($link,"insert into billing_details values(NULL,'$lastbillno','$company_name_session','$product_name_session','$unit_session','$packing_size_session','$price_session','$qty_session')") or die(mysqli_error($link));
+                mysqli_query($link,"update stock_master set product_qty=product_qty-$qty_session where product_company='$company_name_session' && product_name='$product_name_session' && product_unit='$unit_session' ");
             }
             
         }
