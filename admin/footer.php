@@ -1,7 +1,7 @@
 <!--Footer-part-->
 
 <div class="row-fluid">
-    <div id="footer" class="span12" style="color:white"> Designed by: MUHAMMAD FIRDAUS DANIAL</div>
+    <div id="footer" class="span12" style="color:white"> ToolStore Inventory Management System</div>
 </div>
 
 <!--end-Footer-part-->
