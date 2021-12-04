@@ -364,6 +364,34 @@ include "../user/connection.php";
     }
 
 
+
+function delete_qty(session_id)
+{
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+               
+                if(xmlhttp.responseText=="")
+                {
+                    // everytime a new product is added it will call the session fromt the load billing products
+                    load_billing_products();
+                    alert("The Product has been added Successfully!");
+                }
+                else
+                {
+                    // everytime a new product is added it will call the session fromt the load billing products
+                    load_billing_products();
+                    alert(xmlhttp.responseText);
+                }
+
+                
+            }
+        };
+        xmlhttp.open("GET", "forajax/delete_in_session.php?sessionid="+session_id, true);
+        xmlhttp.send();
+
+}
 </script>
 
 

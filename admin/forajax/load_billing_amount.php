@@ -23,7 +23,6 @@ for($i=0;$i<$max;$i++)
             foreach($_SESSION['cart'][$i] as $key => $val)
             {
                 
-                
                 if($key=="qty")
                 {
                     $qty_session=$val;
@@ -34,7 +33,7 @@ for($i=0;$i<$max;$i++)
                 }
             }
 
-            $gtotal=$gtotal+($qty_session * $price_session);
+            $gtotal=$gtotal+($qty_session*$price_session);
             
         }
 
