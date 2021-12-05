@@ -8,7 +8,7 @@ include "../user/connection.php";
 <div id="content">
     <!--breadcrumbs-->
     <div id="content-header">
-        <div id="breadcrumb"><a href="index.html" class="tip-bottom"><i class="icon-home"></i>
+        <div id="breadcrumb"><a href="index.html" class="tip-bottom"><i class="icon icon-exchange"></i>
                 Add New Unit</a></div>
     </div>
     <!--End-breadcrumbs-->
