@@ -66,6 +66,7 @@ while($row=mysqli_fetch_array($res))
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
+                    <th>Return</th>
                 </tr>
                 <?php
                 $total=0;
@@ -74,12 +75,13 @@ while($row=mysqli_fetch_array($res))
                 {
                     echo "<tr>";
                     echo "<td>"; echo $row["product_company"]; echo "</td>";
-                    echo "<td>"; echo $row["product_name"]; echo "</td>";
-                    echo "<td>"; echo $row["product_unit"]; echo "</td>";
-                    echo "<td>"; echo $row["packing_size"]; echo "</td>";
-                    echo "<td>"; echo $row["price"]; echo "</td>";
-                    echo "<td>"; echo $row["qty"]; echo "</td>";
-                    echo "<td>"; echo ($row["price"] * $row["qty"]); echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["product_name"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["product_unit"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["packing_size"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["price"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["qty"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo ($row["price"] * $row["qty"]); echo "</td>";
+                    echo "<td style='text-align:center;'>"; ?> <a href="return.php?id=<?php echo $row["id"]; ?>" style="color:red">Return</a> <?php echo "</td>";
                     echo "</tr>";
                     $total=$total+($row["price"] * $row["qty"]);
                 }
