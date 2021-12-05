@@ -15,7 +15,7 @@ while($row=mysqli_fetch_array($res))
     <form name="form1" action="" method="post" class="form-horizontal nopadding">
         <!--breadcrumbs-->
         <div id="content-header">
-            <div id="breadcrumb"><a href="index.html" class="tip-bottom"><i class="icon-home"></i>
+            <div id="breadcrumb"><a href="index.html" class="tip-bottom"><i class="icon icon-shopping-cart"></i>
                     Sales of Products</a></div>
         </div>
 
