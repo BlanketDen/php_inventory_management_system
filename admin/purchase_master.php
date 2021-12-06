@@ -1,3 +1,14 @@
+<?php 
+session_start();
+if(!isset($_SESSION["admin"]))
+{
+    ?>
+    <script type="text/javascript">
+        window.location="index.php";
+    </script>
+    <?php
+}
+?>
 <?php
 include "header.php";
 include "../user/connection.php";
@@ -133,10 +144,10 @@ include "../user/connection.php";
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label">Enter Price :</label>
+                                <label class="control-label">Enter Expiry Date :</label>
 
                                 <div class="controls">
-                                <input type="text" name="expiry_date" class="span11" placeholder="YYYY-MM-DD" required pattern="\d{4}-\d{2}-\d{2}">
+                                <input type="text" name="dt" id="dt" class="span11" placeholder="YYYY-MM-DD" required pattern="\d{4}-\d{2}-\d{2}">
                                 </div>
                             </div>
 
@@ -216,7 +227,8 @@ include "../user/connection.php";
 <?php
 if(isset($_POST["submit1"]))
 {
-    mysqli_query($link,"insert into purchase_master values(NULL,'$_POST[company_name]','$_POST[product_name]','$_POST[unit]','$_POST[packing_size]','$_POST[qty]','$_POST[price]','$_POST[party_name]','$_POST[purchase_type]','$_POST[expiry_date]')") or die(mysqli_error($link));
+    $today_date=date("Y-m-d");
+    mysqli_query($link,"insert into purchase_master values(NULL,'$_POST[company_name]','$_POST[product_name]','$_POST[unit]','$_POST[packing_size]','$_POST[qty]','$_POST[price]','$_POST[party_name]','$_POST[purchase_type]','$_POST[dt]','$today_date','$_SESSION[admin]')") or die(mysqli_error($link));
 
     $count=0;
     $res=mysqli_query($link,"select * from stock_master where product_company='$_POST[company_name]' && product_name='$_POST[product_name]' && product_unit='$_POST[unit]'");

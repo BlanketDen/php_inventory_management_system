@@ -79,29 +79,19 @@
             <a href="sales_master.php"><i class="icon icon-shopping-cart"></i><span>Sales Master</span></a>
         </li>
 
-        <li >
-            <a href="stock_master.php"><i class="icon icon-shopping-cart"></i><span>Stock Master</span></a>
-        </li>
-
-        <li >
-            <a href="view_bills.php"><i class="icon icon-shopping-cart"></i><span>View Invoice</span></a>
-        </li>
-
-        <li >
-            <a href="return_product_list.php"><i class="icon icon-shopping-cart"></i><span>Returned Product List</span><span
-                    class="label label-important">New</span></a>
-        </li>
 
 
-
-        <!--<li class="submenu"><a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span
-                    class="label label-important">3</span></a>
+        <li class="submenu"><a href="#"><i class="icon icon-th-list"></i> <span>Report List</span> <span
+                    class="label label-important">+</span></a>
             <ul>
-                <li><a href="form-common.html">Basic Form</a></li>
-                <li><a href="form-validation.html">Form with Validation</a></li>
-                <li><a href="form-wizard.html">Form with Wizard</a></li>
+                <li><a href="purchase_report.php">Purchase Report</a></li>
+                <li><a href="view_bills.php">Sales Report</a></li>
+                <li><a href="stock_master.php">Stock Report</a></li>
+                <li><a href="return_product_list.php">Returned Products Report</a></li>
+                <li><a href="party_report_list.php">Party Report</a></li>
+                <li><a href="expiry_report.php">Expiry Report</a></li>
             </ul>
-        </li>-->
+        </li>
 
     </ul>
 </div>

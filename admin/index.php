@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../user/connection.php";
 ?>
 <!DOCTYPE html>
@@ -55,6 +56,8 @@ include "../user/connection.php";
         $count=mysqli_num_rows($res);
         if($count>0)
         {
+            $_SESSION["admin"]=$username;
+            
             ?>
     <script type="text/javascript">
         window.location="demo.php";
