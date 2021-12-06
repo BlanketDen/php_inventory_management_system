@@ -84,9 +84,15 @@
         </li>
 
         <li >
-            <a href="view_bills.php"><i class="icon icon-shopping-cart"></i><span>View Bills</span><span
+            <a href="view_bills.php"><i class="icon icon-shopping-cart"></i><span>View Invoice</span></a>
+        </li>
+
+        <li >
+            <a href="return_product_list.php"><i class="icon icon-shopping-cart"></i><span>Returned Product List</span><span
                     class="label label-important">New</span></a>
         </li>
+
+
 
         <!--<li class="submenu"><a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span
                     class="label label-important">3</span></a>
