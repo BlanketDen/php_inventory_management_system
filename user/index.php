@@ -19,7 +19,7 @@ include "connection.php";
 <body>
 <div id="loginbox">
     <form name="form1" class="form-vertical" action="" method="post">
-        <div class="control-group normal_text"><h3>Login Page</h3></div>
+        <div class="control-group normal_text"><h3>ToolStore Login Page</h3></div>
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
