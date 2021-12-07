@@ -28,9 +28,36 @@ include "../user/connection.php";
     <div class="container-fluid">
 
         <div class="row-fluid" style="background-color: white; min-height: 1000px; padding:10px;">
-            <table class="table table-bordered">
+        
+        <form class="form-inline" action="" name="form1" method="post">
+                    <div class="form-group">
+                        <label for="email">Select Start Date</label>
+                        <input type="text" name="dt" id="dt" autocomplete="off" class="form-control" required style="width:200px;border-style:solid; border-width:1px; border-color:#666666" placeholder="click here to open calender"  >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Select End Date</label>
+                        <input type="text" name="dt2" id="dt2" autocomplete="off" placeholder="click here to open calender"  class="form-control" style="width:200px;border-style:solid; border-width:1px; border-color:#666666" >
+                    </div>
+                    <button type="submit" name="submit1" class="btn btn-success">Filter the Dates</button>
+                    <button type="button" name="submit2" class="btn btn-warning" onclick="window.location.href=window.location.href">Clear Search</button>
+                </form>
+
+                <br>
+
+                <?php 
+                if(isset($_POST["submit1"]))
+                {
+                    ?>
+
+                    <?php
+                }
+                else{
+                    ?>
+
+                    <table class="table table-bordered">
                 <tr>
                     <th>Bill No:</th>
+                    <th>Returned By</th>
                     <th>Date Returned</th>
                     <th>Product Company</th>
                     <th>Product Name</th>
@@ -41,11 +68,13 @@ include "../user/connection.php";
                     <th>Total</th>
                 </tr>
                 <?php
-                $res=mysqli_query($link,"select * from return_products order by id asc");
+                //undefined array key dt and dt2 but already defined above in the calender//
+                $res=mysqli_query($link,"select * from return_products where (return_date>='$_POST[dt]' && return_date<='$_POST[dt2]') order by id asc");
                 while($row=mysqli_fetch_array($res))
                 {
                     echo "<tr>";
                     echo "<td style='text-align:center;'>"; echo $row["bill_no"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["return_by"]; echo "</td>";
                     echo "<td style='text-align:center;'>"; echo $row["return_date"]; echo "</td>";
                     echo "<td style='text-align:center;'>"; echo $row["product_company"]; echo "</td>";
                     echo "<td style='text-align:center;'>"; echo $row["product_name"]; echo "</td>";
@@ -58,6 +87,12 @@ include "../user/connection.php";
                 }
                 ?>
             </table>
+                    <?php
+                }
+                ?>
+
+
+            
         </div>
 
     </div>
