@@ -45,7 +45,7 @@ while($row2=mysqli_fetch_array($res2))
 
 $today_date=date('Y-m-d');
 
-mysqli_query($link,"insert into return_products values(NULL,'$bill_no','$today_date','$product_company','$product_name','$product_unit','$packing_size','$price','$qty','$total')");
+mysqli_query($link,"insert into return_products values(NULL,'$_SESSION[admin]','$bill_no','$today_date','$product_company','$product_name','$product_unit','$packing_size','$price','$qty','$total')");
 
 
 //to increase the stock quantity into the stock master table after returning(aka removing) it from the detailed bills
