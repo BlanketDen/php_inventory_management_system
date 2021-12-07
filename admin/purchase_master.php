@@ -236,7 +236,8 @@ if(isset($_POST["submit1"]))
 
     if($count==0)
     {
-        mysqli_query($link,"insert into stock_master values(NULL,'$_POST[company_name]','$_POST[product_name]','$_POST[unit]','$_POST[qty]','0')") or die(mysqli_error($link));
+        mysqli_query($link,"INSERT INTO stock_master (product_company, product_name, product_unit,packing_size, product_qty, product_selling_price) 
+        VALUES('$_POST[company_name]','$_POST[product_name]','$_POST[unit]','$_POST[packing_size]','$_POST[qty]','$_POST[price]')") or die(mysqli_error($link));
     }
     else{
         mysqli_query($link,"update stock_master set product_qty=product_qty+$_POST[qty] where product_company='$_POST[company_name]' && product_name='$_POST[product_name]' && product_unit='$_POST[unit]'") or die(mysqli_error($link));
