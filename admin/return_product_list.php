@@ -48,7 +48,39 @@ include "../user/connection.php";
                 if(isset($_POST["submit1"]))
                 {
                     ?>
-
+<table class="table table-bordered">
+                <tr>
+                    <th>Bill No:</th>
+                    <th>Returned By</th>
+                    <th>Date Returned</th>
+                    <th>Product Company</th>
+                    <th>Product Name</th>
+                    <th>Product Unit</th>
+                    <th>Packing Size</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                <?php
+                //undefined array key dt and dt2 but already defined above in the calender//
+                $res=mysqli_query($link,"select * from return_products where (return_date>='$_POST[dt]' && return_date<='$_POST[dt2]') order by id asc");
+                while($row=mysqli_fetch_array($res))
+                {
+                    echo "<tr>";
+                    echo "<td style='text-align:center;'>"; echo $row["bill_no"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["return_by"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["return_date"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["product_company"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["product_name"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["product_unit"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["packing_size"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["product_price"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["product_qty"]; echo "</td>";
+                    echo "<td style='text-align:center;'>"; echo $row["total"]; echo "</td>";
+                    echo "</tr>";
+                }
+                ?>
+            </table>
                     <?php
                 }
                 else{
@@ -69,7 +101,7 @@ include "../user/connection.php";
                 </tr>
                 <?php
                 //undefined array key dt and dt2 but already defined above in the calender//
-                $res=mysqli_query($link,"select * from return_products where (return_date>='$_POST[dt]' && return_date<='$_POST[dt2]') order by id asc");
+                $res=mysqli_query($link,"select * from return_products order by id asc");
                 while($row=mysqli_fetch_array($res))
                 {
                     echo "<tr>";
