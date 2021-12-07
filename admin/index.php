@@ -45,7 +45,7 @@ include "../user/connection.php";
     </form>
 
     <?php
-
+    //to check the username and password//
     if(isset($_POST["submit1"]))
     {
         $username=mysqli_real_escape_string($link,$_POST["username"]);
@@ -60,7 +60,7 @@ include "../user/connection.php";
             
             ?>
     <script type="text/javascript">
-        window.location="demo.php";
+        window.location="dashboard.php";
     </script>
             <?php
         }

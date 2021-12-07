@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(!isset($_SESSION["user"]))
+if(!isset($_SESSION["admin"]))
 {
     ?>
     <script type="text/javascript">
@@ -28,6 +28,7 @@ include "../user/connection.php";
     <div class="container-fluid">
 
         <div class="row-fluid" style="background-color: white; min-height: 1000px; padding:10px;">
+
         <div class="card" style="width: 18rem; border-style:solid; border-width: 1px; border-radius: 10px; float: left;">
             <div class="card-body">
                 <h3 class="card-title text-center">No. of Products</h3>
@@ -86,7 +87,6 @@ include "../user/connection.php";
                 </h1>
             </div>
         </div>
-
 
         <div class="card" style="width: 18rem; border-style:solid; border-width: 1px; border-radius: 10px; float: left; margin-left: 5px">
             <div class="card-body">
