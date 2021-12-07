@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "connection.php";
 ?>
 <!DOCTYPE html>
@@ -55,9 +56,10 @@ include "connection.php";
         $count=mysqli_num_rows($res);
         if($count>0)
         {
+            $_SESSION["user"]=$username;
             ?>
     <script type="text/javascript">
-        window.location="demo.php";
+        window.location="dashboard.php";
     </script>
             <?php
         }
